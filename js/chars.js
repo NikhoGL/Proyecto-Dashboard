@@ -1,15 +1,19 @@
+async function dummyChart(){
+    await getDommyData()
+
+
 const ctx = document.getElementById('chart');
-const days = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'];
-const temp = [-20, -10, 0, 10, 20, 30, 40 ]
-const Ciudadlabel = []
-    temperaturaCiudad = []
-    temperaturaDiaria = []
+// const days = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'];
+// const temp = [-20, -10, 0, 10, 20, 30, 40 ]
+const Ciudadlabel = [],
+    temperaturaCiudadData = [],
+    temperaturaDiariaData = []
 
 
     const grafico = new Chart(ctx,{
         type:'line',
         data: {
-            labels: temp,
+            labels: Ciudadlabel,
             datasets: [{
                 label:'days',
                 data: temp,
@@ -26,9 +30,18 @@ const Ciudadlabel = []
             }]
         }
     })
+}
+
+    option: {
+        tooltips:{
+            mode:'index'
+        }
+    }
+    dummyChart ()
 
     async function getDommyData(){
 
+        const key = `4qbGPzASID43xCjCcoTsoVYALcrB9Bbe` 
         const api = `http://dataservice.accuweather.com/currentconditions/v1/`
 
         const response = await fetch(api)
@@ -42,7 +55,7 @@ const Ciudadlabel = []
     console.log(ciudad, temp, days)
 
     Ciudadlabel = ciudad
-    temperaturaCiudad = temp
-    temperaturaDiaria = days
+    temperaturaCiudadData = temp
+    temperaturaDiariaData = days
     }
     getDommyData ()
