@@ -1,0 +1,38 @@
+body{
+    background:#b5d8ff ;
+    margin: 10px;
+    padding:0%;
+}
+
+.card{
+    background-color:#5c9ce5;
+    color: white;
+    margin-left: 0%;
+    padding: 10px;
+    padding-left: 0%;
+    padding-right: 0%;
+    min-width: auto;
+    
+  
+}
+
+.icon{
+    position: relative;
+    top: -50px;
+    border-radius: 50%;
+    width: 100px;
+    margin-bottom: -50px;
+  }
+
+  .chart{
+    background-color:#e4f1ff;
+    border-radius: 60%;
+  }
+
+  .h1{
+    background-color: #b5d8ff;
+  }
+
+  .row{
+    
+  }
