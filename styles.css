@@ -1,18 +1,23 @@
+.navbar{
+background-color: #b5d8ff;
+padding: 10px;
+margin: 10px;
+margin-left: 33px;
+margin-right: 40x;
+text-shadow: 10px
+;
+
+}
 body{
     background:#b5d8ff ;
-    margin: 10px;
+    margin: 0px;
     padding:0%;
 }
 
 .card{
     background-color:#5c9ce5;
     color: white;
-    margin-left: 0%;
-    padding: 10px;
-    padding-left: 0%;
-    padding-right: 0%;
-    min-width: auto;
-    shape-margin: 100px;
+
   
 }
 

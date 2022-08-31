@@ -12,21 +12,29 @@
 <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+    <nav class="navbar ">
+        <div class="container-fluid">
+            <a class="navbar-brand text-muted fs-2 fw-semibolder fst-italic text-md-start" href="#">
+              <img src="./img/rain_storm_thunderstorm_climate_forecast_weather_sun_cloud_thunder_icon_226602.ico" alt="" width="60" height="auto" class="d-inline-block align-text-center">
+             Forecast by City
+            </a>
+          </div>
+    </nav>
     <div class="container-fluid">
 
         <div class="container-fluid d-flex justify-content-between text-center rounded">
-            <div class="row text-center d-block mx-auto">
-              <div class="col container-fluid ">
-                  <h1 class="container-fluid text-muted text-center text-bg-light rounded mx-auto">Forecast</h1>
-                <form class="change-location text-center text-muted">
+            <div class="row row-cols-12 text-center d-block mx-auto">
+              <div class="col container-fluid  text-light">
+                 
+                <form class="change-location text-center ">
                    
                     <input type="text" name="city" class="form-control border-info rounded mt-0" placeholder="Ingresa una ciudad">
                 </form>
                
                 <div class="card rounded d-none" >
                     <img src="https://via.placeholder.com/400x300" class="time card-img-top img-fluid">
-                    <div class="icon mx-auto text-center text-bg-light">
-                        <img src="" alt="">
+                    <div class="icon mx-auto text-center text-bg-light ">
+                        <img src="" alt="" >
                     </div>
                     <div class="text-muted text-uppercase text-center datos ">
                         <h5 >city name</h5>
@@ -38,7 +46,7 @@
                     </div>
                 </div>
               </div>
-              <div class="col-9 shadow-lg rounded p-5 float-end chart">
+              <div class="col shadow-lg rounded p-5 float-end chart">
                 
                   <div class="container-fluid text-bg-light p-3">
                     chartJs
