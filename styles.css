@@ -1,0 +1,80 @@
+body{
+    background:#b5d8ff ;
+    margin: 10px;
+    padding:0%;
+}
+
+.card{
+    background-color:#5c9ce5;
+    color: white;
+    margin-left: 0%;
+    padding: 10px;
+    padding-left: 0%;
+    padding-right: 0%;
+    min-width: auto;
+}
+
+.icon{
+    position: relative;
+    top: -50px;
+    border-radius: 50%;
+    width: 100px;
+    margin-bottom: -50px;
+  }
+
+  .chart{
+    background-color:#e4f1ff;
+    border-radius: 60%;
+  }
+
+  .h1{
+    background-color: #b5d8ff;
+  }
+
+  .custom-box-bar {
+    width: 265px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.percentages {
+    font-size: 8px;
+    margin-bottom: 5px;
+}
+
+.bar {
+    width: 265px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    box-shadow: 20px 25px 45px rgba(0, 0, 0, 0.5);
+}
+
+.percentage {
+    width: var(--w);
+    height: 100%;
+    background-color: #5c9ce5;
+    border-radius: 10px;
+    animation: Increase 5s ease;
+}
+
+@keyframes Increase {
+    0% {width: 0%;}
+    100% {width: var(--w);}
+}
+
+.div-icon {
+  color: #5c9ce5;
+}
+
+@media (max-width: 420px) {
+  .custom-box-bar {
+    width: 180px;
+  }
+  
+  .bar {
+    width: 180px;
+  }
+}
