@@ -17,7 +17,7 @@ body{
 .card{
     background-color:#5c9ce5;
     color: white;
-
+    margin-bottom: 20px;
   
 }
 
@@ -25,7 +25,7 @@ body{
     position: relative;
     top: -50px;
     border-radius: 50%;
-    width: 100px;
+    width: auto;
     margin-bottom: -50px;
   }
 
