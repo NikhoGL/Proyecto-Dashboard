@@ -12,7 +12,7 @@ body{
     padding-left: 0%;
     padding-right: 0%;
     min-width: auto;
-    
+    shape-margin: 100px;
   
 }
 
@@ -33,6 +33,3 @@ body{
     background-color: #b5d8ff;
   }
 
-  .row{
-    
-  }
