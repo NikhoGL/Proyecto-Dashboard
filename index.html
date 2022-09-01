@@ -1,44 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<link>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
     <title>Weather App</title>
-<<<<<<< HEAD
-    <link rel="shortcut icon" href="./img/rain_storm_thunderstorm_climate_forecast_weather_sun_cloud_thunder_icon_226602.ico" type="image/x-icon" >
-=======
     <link rel="shortcut icon" href="./img/cloudy_118029.png" type="image/x-icon" >
->>>>>>> 6f899bb6b35e3bdb186deb3af56a279dc39f21e2
-
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 <link rel="stylesheet" href="./styles.css">
+=======
+>>>>>>> origin/lukas
 </head>
 <body>
-    <nav class="navbar ">
-        <div class="container-fluid">
-            <a class="navbar-brand text-muted fs-2 fw-semibolder fst-italic text-md-start" href="#">
-              <img src="./img/rain_storm_thunderstorm_climate_forecast_weather_sun_cloud_thunder_icon_226602.ico" alt="" width="60" height="auto" class="d-inline-block align-text-center">
-             Forecast by City
-            </a>
-          </div>
-    </nav>
     <div class="container-fluid">
 
-        <div class="container-fluid d-flex justify-content-between text-center rounded">
-            <div class="row row-cols-12 text-center d-block mx-auto">
-              <div class="col container-fluid  text-light">
-                 
-                <form class="change-location text-center ">
+    
+        <div class="row container-fluid d-flex justify-content-between text-center rounded">
+            <div class="col-md-3 col-12 text-center d-block mx-auto">
+                <div class="container-fluid ">
+                    <h1 class="container-fluid text-muted text-center text-bg-light rounded mx-auto">Forecast</h1>
+                <form class="change-location text-center text-muted">
                    
-                    <input type="text" name="city" class="form-control border-info rounded-4 mt-0" placeholder="Ingresa una ciudad">
+                    <input type="text" name="city" class="form-control border-info rounded mt-0" placeholder="Ingresa una ciudad">
                 </form>
                
                 <div class="card rounded d-none" >
                     <img src="https://via.placeholder.com/400x300" class="time card-img-top img-fluid">
-                    <div class="icon mx-auto text-center text-bg-light ">
-                        <img src="" alt="" >
+                    <div class="icon mx-auto text-center text-bg-light">
+                        <img src="" alt="">
                     </div>
                     <div class="text-muted text-uppercase text-center datos ">
                         <h5 >city name</h5>
@@ -49,27 +41,21 @@
                         </div>
                     </div>
                 </div>
-              </div>
-              <div class="col shadow-lg rounded p-5 float-end chart">
-                
-                  <div class="container-fluid text-bg-light p-3">
-                    chartJs
-                  </div>
-
-                  <div class="container text-bg-light p-3">
-                    chartJs
-                  </div>
-                 
-              </div>
             </div>
-          </div>
-
-
-
+            <div class="col-md-9 col-12 shadow-lg rounded p-5 float-end chart">
+                <div class="container-fluid text-bg-light p-3">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <section id="details" class="my-3"></section>
+            </div>
+        </div>
     </div>
 
+
     <div id="app"></div>
+    <script src="https://kit.fontawesome.com/409f432a75.js" crossorigin="anonymous"></script>
     <script src="./js/forecast.js"></script>
     <script src="./js/app.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html> 
