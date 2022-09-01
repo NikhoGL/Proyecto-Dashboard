@@ -1,12 +1,23 @@
+.navbar{
+background-color: #b5d8ff;
+padding: 10px;
+margin: 10px;
+margin-left: 33px;
+margin-right: 40x;
+text-shadow: 10px
+;
+
+}
 body{
     background:#b5d8ff ;
-    margin: 10px;
+    margin: 0px;
     padding:0%;
 }
 
 .card{
     background-color:#5c9ce5;
     color: white;
+    margin-bottom: 20px;
     margin-left: 0%;
     padding: 10px;
     padding-left: 0%;
@@ -18,7 +29,7 @@ body{
     position: relative;
     top: -50px;
     border-radius: 50%;
-    width: 100px;
+    width: auto;
     margin-bottom: -50px;
   }
 

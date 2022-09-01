@@ -141,9 +141,9 @@ const updateUI = (data) => {
 
     let timeDay = null;
         if(weather.IsDayTime){
-            timeDay = `img/day.svg`;
+            timeDay = `img/day.jpg`;
         }else{
-            timeDay = `img/night.svg`
+            timeDay = `img/night.jpg`
         }
     
     time.setAttribute(`src`, timeDay);
@@ -179,11 +179,3 @@ inputCity.addEventListener(`submit`,  e=>{
         .catch(err => console.log(err));
 });
 
-// Configurar cabeceras y cors
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
-    next();
-});
