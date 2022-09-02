@@ -1,13 +1,16 @@
+const Ciudadlabel = [],
+    temperaturaCiudadData = [],
+    temperaturaDiariaData = []
+
+
 async function dummyChart(){
     await getDommyData()
+ 
 
 
 const ctx = document.getElementById('chart');
 // const days = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'];
 // const temp = [-20, -10, 0, 10, 20, 30, 40 ]
-const Ciudadlabel = [],
-    temperaturaCiudadData = [],
-    temperaturaDiariaData = []
 
 
     const grafico = new Chart(ctx,{
@@ -16,13 +19,14 @@ const Ciudadlabel = [],
             labels: Ciudadlabel,
             datasets: [{
                 label:'days',
-                data: temp,
+                data: temperaturaCiudadData,
                 backgroundColor: [
                     pattern.draw('square', '#ff6384'),
                     pattern.draw('circle', '#36a2eb'),
                     pattern.draw('diamond', '#cc65fe'),
                     pattern.draw('triangle', '#ffce56')
                 ],
+                                        
             
             labels: ['Red', 'Blue', 'Purple', 'Yellow']
         
@@ -41,8 +45,8 @@ const Ciudadlabel = [],
 
     async function getDommyData(){
 
-        const key = `4qbGPzASID43xCjCcoTsoVYALcrB9Bbe` 
-        const api = `http://dataservice.accuweather.com/currentconditions/v1/`
+        const key = `zkIGCzUG1jacGfslQHNmdRwfobDJDlH7` 
+        const api = `http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/`
 
         const response = await fetch(api)
         const barChartData = await response.json()
