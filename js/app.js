@@ -1,10 +1,11 @@
-const inputCity = document.querySelector(`form`);
+import {getCity, getWeather, getWeatherDays} from "./forecast.js"
 const card = document.querySelector(`.card`)
 const datos= document.querySelector(`.datos`)
 const time = document.querySelector(`img.time`)
 const icon = document.querySelector(`.icon img`)
 const details = document.querySelector('#details');
 const ctx = document.querySelector('#myChart').getContext('2d');
+const inputCity = document.querySelector(`#form-city`)
 
 const updateUI = (data) => {
 
