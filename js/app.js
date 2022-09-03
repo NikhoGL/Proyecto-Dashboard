@@ -158,7 +158,6 @@ const updateUI = (data) => {
     
     time.setAttribute(`src`, timeDay);
 
-
     if(card.classList.contains(`d-none`)){
         card.classList.remove(`d-none`)
     }   
@@ -177,7 +176,6 @@ const updateCity = async (city)=>{
         weatherDays
     }
 };
-
 
 
 inputCity.addEventListener(`submit`,  e=>{
