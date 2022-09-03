@@ -8,4 +8,5 @@ Al ingresar una ciudad la aplicación te mostrará la temperatura actual, con gr
 
 ### Para el desarrollo del backend aplicamos procesos síncronos y asíncronos en JavaScript.
 
-### Te invitamos a ver nuestra página desplegada en el siguiente enlace:
+
+#### Integrantes: Lukas Martínez / Rodrigo Latín / Nikhol Guillot.
