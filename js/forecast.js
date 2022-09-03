@@ -32,3 +32,7 @@ const getCity = async (city) => {
 
    return data[0];
 }
+
+export {getCity, getWeatherDays, getWeather}
+
+
