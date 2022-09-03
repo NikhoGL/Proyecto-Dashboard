@@ -1,12 +1,8 @@
 {
   "dependencies": {
     "cors": "^2.8.5",
-<<<<<<< HEAD
-    "express": "^4.18.1"
-=======
     "express": "^4.18.1",
     "moment": "^2.29.4"
->>>>>>> origin/lukas
   },
   "name": "proyecto-3",
   "version": "1.0.0",

@@ -158,7 +158,6 @@ const updateUI = (data) => {
     
     time.setAttribute(`src`, timeDay);
 
-
     if(card.classList.contains(`d-none`)){
         card.classList.remove(`d-none`)
     }   
@@ -179,7 +178,6 @@ const updateCity = async (city)=>{
 };
 
 
-
 inputCity.addEventListener(`submit`,  e=>{
     e.preventDefault();
     
@@ -189,9 +187,4 @@ inputCity.addEventListener(`submit`,  e=>{
     updateCity(city)
         .then(data => updateUI(data))
         .catch(err => console.log(err));
-<<<<<<< HEAD
 });
-
-=======
-});
->>>>>>> origin/lukas
