@@ -1,4 +1,5 @@
-const key = `zkIGCzUG1jacGfslQHNmdRwfobDJDlH7`
+
+const key = `4qbGPzASID43xCjCcoTsoVYALcrB9Bbe`
 
 const getWeather = async (id) => {
      
@@ -32,3 +33,5 @@ const getCity = async (city) => {
 
    return data[0];
 }
+
+export {getCity, getWeatherDays, getWeather}
