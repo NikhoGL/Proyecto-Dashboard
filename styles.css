@@ -14,6 +14,19 @@ body{
     padding:0%;
 }
 
+.navbar {
+  background-color: #5c9ce5;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 .card{
     background-color:#5c9ce5;
     color: white;
