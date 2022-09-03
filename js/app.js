@@ -4,14 +4,14 @@ const datos= document.querySelector(`.datos`)
 const time = document.querySelector(`img.time`)
 const icon = document.querySelector(`.icon img`)
 const details = document.querySelector('#details');
-
+const ctx = document.querySelector('#myChart').getContext('2d');
 
 const updateUI = (data) => {
 
-    console.log(data);
-
     const cityDatos = data.cityDatos;
     const weather = data.weather;
+    const weatherDays = data.weatherDays;
+
 
     let realFeel = (weather.RealFeelTemperature.Metric.Value * 100) / 50;
 
@@ -23,6 +23,42 @@ const updateUI = (data) => {
         <span>&deg;C</span>
     </div>
     `;
+
+
+    function CrearGraphic() {
+
+        const tempMax = {
+            label: `Temperatura (°C) máxima de los próximos 5 días`,
+            data: [`${weatherDays.DailyForecasts[0].Temperature.Maximum.Value}`, `${weatherDays.DailyForecasts[1].Temperature.Maximum.Value}`, `${weatherDays.DailyForecasts[2].Temperature.Maximum.Value}`, `${weatherDays.DailyForecasts[3].Temperature.Maximum.Value}`, `${weatherDays.DailyForecasts[4].Temperature.Maximum.Value}`, `${weatherDays.DailyForecasts[0].Temperature.Minimum}`],
+            backgroundColor: 'red',
+            borderColor:'red',
+            borderWidth: 1
+        }
+
+        const tempMin = {
+            label: `Temperatura (°C) mínima de los próximos 5 días`,
+            data: [`${weatherDays.DailyForecasts[0].Temperature.Minimum.Value}`, `${weatherDays.DailyForecasts[1].Temperature.Minimum.Value}`, `${weatherDays.DailyForecasts[2].Temperature.Minimum.Value}`, `${weatherDays.DailyForecasts[3].Temperature.Minimum.Value}`, `${weatherDays.DailyForecasts[4].Temperature.Minimum.Value}`],
+            backgroundColor: 'blue',
+            borderColor: 'blue',
+            borderWidth: 1
+        }
+
+        window.grafica = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['24 Hrs', '48 Hrs', '72 Hrs', '96 Hrs', '120 Hrs'],
+                datasets: [tempMax, tempMin]
+            },
+        })  
+    }
+
+    if(window.grafica) {
+        window.grafica.clear();
+        window.grafica.destroy();
+        CrearGraphic();
+    } else {
+        CrearGraphic();
+    }
 
     details.innerHTML = `
         <div class="my-3 pt-4 d-flex justify-content-start">
@@ -67,19 +103,6 @@ const updateUI = (data) => {
                     </div>
                 </div>
             </div>
-            <div class="col bg-white rounded">
-                <div class="m-3">
-                    <div class="d-flex justify-content-between">
-                        <h3 class="text-dark fs-6 m-0">Precipitaciones</h3>
-                        <div class="div-icon">
-                            <i class="fa-solid fa-cloud-showers-heavy"></i>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-center">
-                        <p class="text-dark fs-5 m-0 pe-1 fw-bold">${weather.PrecipitationSummary.Precipitation.Metric.Value} mm</p>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="row gap-3">
             <div class="col bg-white rounded">
@@ -120,19 +143,6 @@ const updateUI = (data) => {
                     </div>
                 </div>
             </div>
-            <div class="col bg-white rounded">
-                <div class="m-3">
-                    <div class="d-flex justify-content-between">
-                        <h3 class="text-dark fs-6 m-0">Visibilidad</h3>
-                        <div class="div-icon">
-                            <i class="fa-solid fa-eye"></i>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-center">
-                        <p class="text-dark fs-5 m-0 pe-1 fw-bold">${weather.Visibility.Metric.Value} km</p>
-                    </div>
-                </div>
-            </div>
         </div>
     `
 
@@ -159,10 +169,12 @@ const updateCity = async (city)=>{
 
     const cityDatos = await getCity(city);
     const weather = await getWeather(cityDatos.Key);
+    const weatherDays = await getWeatherDays(cityDatos.Key);
     
     return {
         cityDatos,
         weather,
+        weatherDays
     }
 };
 
@@ -170,20 +182,11 @@ const updateCity = async (city)=>{
 
 inputCity.addEventListener(`submit`,  e=>{
     e.preventDefault();
-
+    
     const city = inputCity.city.value.trim();
     inputCity.reset();
 
     updateCity(city)
         .then(data => updateUI(data))
         .catch(err => console.log(err));
-});
-
-// Configurar cabeceras y cors
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
-    next();
 });
