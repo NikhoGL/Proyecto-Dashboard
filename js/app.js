@@ -151,9 +151,9 @@ const updateUI = (data) => {
 
     let timeDay = null;
         if(weather.IsDayTime){
-            timeDay = `img/day.svg`;
+            timeDay = `img/day.jpg`;
         }else{
-            timeDay = `img/night.svg`
+            timeDay = `img/night.jpg`
         }
     
     time.setAttribute(`src`, timeDay);
